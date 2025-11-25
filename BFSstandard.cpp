@@ -48,12 +48,12 @@ private:
      */
     void printDistanceMap(std::vector<std::vector<int>>& distanceMap, int poiNum) {
         std::cout << "\nPOI " << poiNum << " distances:\n";
-        for(int row = 0; row < distanceMap.size(); row++) {  
-            for(int col = 0; col < distanceMap[row].size(); col++) {
-                if(distanceMap[row][col] == -1) {
+        for(auto& row : distanceMap) {  
+            for(int distance : row) {
+                if(distance == -1) {
                     std::cout << "  X";
                 } else {
-                    std::cout << " " << distanceMap[row][col];
+                    std::cout << " " << distance;
                 }
             }
             std::cout << "\n";
@@ -167,4 +167,5 @@ int main() {
     
     
     return 0;
+
 }
